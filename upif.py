@@ -1,4 +1,5 @@
 ## 验证列表url是否正常，正常工作的网站域名放到up_target.txt
+# TODO: Fix HTTPConnectionPool(host='https', port=80): Max retries exceeded
 
 import requests
 
