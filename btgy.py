@@ -1,15 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # @Time    : 6/19/19 10:38 AM
-# @Author  : C0nners Chan
 # @File    : btgy.py
 # @Software: PyCharm
 # 爬取补天公益src
 
-# !/usr/bin/env python
-# -*- coding:utf-8 -*-
-# Auth: Conners Chan
-# TIME: 2018/9/8   14:33
 
 import json
 import requests
