@@ -11,6 +11,7 @@ import requests
 import time
 from bs4 import BeautifulSoup
 from requests.exceptions import ReadTimeout
+# import csv   # 可批量倒入awvs格式
 import lxml
 
 
@@ -79,10 +80,13 @@ def url():
         '__guid': '66782632.2534021926694334500.1560835589122.8506',
         '__DC_gid': '66782632.611115740.1560835589122.1560922605361.59',
         'btlc_ab7a660c7e054d9e446e06f4571ebe41': '1c6d2efdb0d9a62b23b77264b6d5512a42744a1198d5633eb7973f752fc704fa',
-        'PHPSESSID': 'igaes901lfpks8fm71lqsr49r3',
+        'PHPSESSID': 'k94nfckvl142uq48d9vhnupma3',
         '__q__': '1560923806772',
         '__DC_sid': '66782632.3322532378039549000.1560921346741.3696'
     }
+  # csv_result = open('targets.csv','w',encoding='utf-8')
+  # csv_writer = csv.writer(csv_result)
+  #  csv_writer.writerow(["Address", "Describe"])
     with open('gysrc_id.txt', 'r') as f:
         for target in f.readlines():
             target = target.strip()
@@ -94,6 +98,7 @@ def url():
                 name = info.find(name='input', attrs={"name": "company_name"})
                 last_url = f_url.attrs['value']
                 print('厂商:' + name.attrs['value'] + '\t网址:' + f_url.attrs['value'])
+                # csv_writer.writerow([f_url.attrs['value'], name.attrs['value'] ])
                 with open('target.txt', 'a') as t:
                     t.write(last_url + '\n')
                 time.sleep(1)
